@@ -5,6 +5,7 @@ import '@material/react-material-icon/dist/material-icon.min.css';
 import '@material/react-text-field/dist/text-field.min.css';
 import Emojis from '../Emojis';
 import styles from './App.module.css';
+import './App.css';
 
 // the minimum number of characters to search
 const MIN_CHARACTERS_FOR_SEARCH = 4;
@@ -20,6 +21,8 @@ export default () => {
     // if we have the minimum value or we are enforcing search
     if (value.length >= MIN_CHARACTERS_FOR_SEARCH || shouldSearch) {
       setEmojiSearchTerm(value);
+    } else {
+      setEmojiSearchTerm('');
     }
   };
 

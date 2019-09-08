@@ -1,8 +1,12 @@
 .root {
-  margin-top: 1rem;
+  margin-top: var(--gutter-large);
 }
 
 .image {
   width: 32px;
   margin: 0.3rem;
+}
+
+.term {
+  display: block;
 }
