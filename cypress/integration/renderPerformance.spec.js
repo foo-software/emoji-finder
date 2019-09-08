@@ -1,5 +1,5 @@
 describe('Emoji search', () => {
-  it('Types a valid search and erases', async () => {
+  it('Types a valid search and erases', () => {
     cy.viewport('iphone-6');
     cy.visit('http://localhost:3000');
     cy.get('[data-test-id="emojiSearchInput"]')
