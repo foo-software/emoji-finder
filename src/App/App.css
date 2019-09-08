@@ -30,6 +30,7 @@ h6 {
 
 h2,
 h3 {
+  margin: 0 0 var(--gutter-medium);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-medium);
 }

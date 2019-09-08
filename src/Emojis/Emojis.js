@@ -38,7 +38,6 @@ export default ({ emojiSearchName, emojiList }) => {
 
   return (
     <div className={styles.root}>
-      <h2 className={styles.term}>{emojiSearchName || 'Search'}</h2>
       {emojisToShow.map(current => (
         <img alt="emoji" className={styles.image} src={current} key={current} />
       ))}

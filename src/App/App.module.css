@@ -1,7 +1,8 @@
 .root {
-  padding: 1rem;
+  padding: var(--gutter-medium);
 }
 
 .input {
   width: 100%;
+  margin-bottom: var(--gutter-medium);
 }
