@@ -35,7 +35,7 @@ export default () => {
         onRender={(...profileData) => {
           emojisRenderIndex++;
           logProfileData({
-            prefix: emojisRenderIndex,
+            prefix: `Render ${emojisRenderIndex}`,
             data: getProfileData(profileData)
           });
         }}
