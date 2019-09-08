@@ -2,16 +2,23 @@ import React from 'react';
 import emojis from './emojis.json';
 import styles from './Emojis.module.css';
 
-const getEmojis = name => Array.from(new Set(Object.keys(emojis).reduce((accumulator, current) => ([
-  ...accumulator,
-  ...(!current.toLowerCase().includes(name.toLowerCase()) ? [] : [emojis[current]])
-]), [])));
+const getEmojis = name => {
+  const validEmojis = Array.from(new Set(Object.keys(emojis).reduce((accumulator, current) => ([
+    ...accumulator,
+    ...(!current.toLowerCase().includes(name.toLowerCase()) ? [] : [emojis[current]])
+  ]), [])));
 
-export default ({ emoji }) => {
-  const emojis = getEmojis(emoji);
+  return !validEmojis.length ? Array.from(new Set(Object.values(emojis))) : validEmojis;
+};
+
+export default ({ emoji, emojiSearchTerm }) => {
+  const emojis = getEmojis(emojiSearchTerm);
 
   return (
     <div className={styles.root}>
+      <h2>
+        {emoji}
+      </h2>
       {emojis.map(current => (
         <img
           alt="emoji"
