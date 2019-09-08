@@ -27,7 +27,7 @@ export default () => {
   const onClick = () => {
     setEmojiIfValid({
       value: emoji,
-      shouldSearch: true,
+      shouldSearch: true
     });
   };
 
@@ -41,17 +41,16 @@ export default () => {
       >
         <Input
           value={emoji}
-          onChange={event => setEmojiIfValid({ value: event.currentTarget.value })}
+          onChange={event =>
+            setEmojiIfValid({ value: event.currentTarget.value })
+          }
           spellCheck="false"
           type="text"
           id="emoji"
           isValid
         />
       </TextField>
-      <Emojis
-        emoji={emoji}
-        emojiSearchTerm={emojiSearchTerm}
-      />
+      <Emojis emoji={emoji} emojiSearchTerm={emojiSearchTerm} />
     </div>
   );
 };
