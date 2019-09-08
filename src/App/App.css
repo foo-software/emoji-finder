@@ -1,0 +1,42 @@
+:root {
+  --font-noto: 'Noto Sans', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-size-large: 1.6rem;
+  --font-size-medium: 1.4rem;
+  --font-size-medium-large: 1.4rem;
+  --font-size-small: 1rem;
+  --font-weight-large: 600;
+  --font-weight-medium: 500;
+  --font-weight-small: 200;
+  --gutter-extra-small: 3px;
+  --gutter-extra-large: 4rem;
+  --gutter-large: 1.5rem;
+  --gutter-medium: 1rem;
+  --gutter-small: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+  letter-spacing: var(--letter-spacing);
+  margin: 0 0 var(--gutter-large);
+}
+
+h2,
+h3 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-medium);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-small);
+}

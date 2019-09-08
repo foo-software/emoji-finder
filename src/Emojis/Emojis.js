@@ -1,9 +1,8 @@
 import React from 'react';
-import emojis from './emojis.json';
+import { version as emojisVersion, data as emojis } from './emojis.json';
 import styles from './Emojis.module.css';
 
 const getEmojis = name => {
-  console.log('name', name);
   const validEmojis = Array.from(
     new Set(
       Object.keys(emojis).reduce(
