@@ -4,6 +4,7 @@ import TextField, { Input } from '@material/react-text-field';
 import '@material/react-material-icon/dist/material-icon.min.css';
 import '@material/react-text-field/dist/text-field.min.css';
 import { getProfileData, logProfileData } from '../profiler';
+import emojiList from './emojis.json';
 import Emojis from '../Emojis';
 import styles from './App.module.css';
 import './App.css';
@@ -12,7 +13,7 @@ import './App.css';
 let emojisRenderIndex = 0;
 
 export default () => {
-  const [emoji, setEmoji] = useState('');
+  const [emojiSearchName, setEmojiSearchName] = useState('');
 
   return (
     <div className={styles.root}>
@@ -22,8 +23,8 @@ export default () => {
         trailingIcon={<MaterialIcon icon="search" />}
       >
         <Input
-          value={emoji}
-          onChange={event => setEmoji(event.currentTarget.value)}
+          value={emojiSearchName}
+          onChange={event => setEmojiSearchName(event.currentTarget.value)}
           spellCheck="false"
           type="text"
           id="emoji"
@@ -40,7 +41,7 @@ export default () => {
           });
         }}
       >
-        <Emojis emoji={emoji} />
+        <Emojis emojiSearchName={emojiSearchName} emojiList={emojiList} />
       </Profiler>
     </div>
   );
