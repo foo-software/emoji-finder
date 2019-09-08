@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './Emojis.module.css';
 
 // all de-duped emojis
@@ -23,7 +23,9 @@ const getEmojisByName = ({ emojis, name }) =>
 
 export default ({ emojiSearchName, emojiList }) => {
   // we use all emojis if none are found from the search
-  const allEmojis = getAllEmojis(emojiList.data);
+  const allEmojis = useMemo(() => getAllEmojis(emojiList.data), [
+    emojiList.data
+  ]);
 
   // if the search is empty show all emojis
   const emojis = !emojiSearchName
