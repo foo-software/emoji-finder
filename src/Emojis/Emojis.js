@@ -22,8 +22,8 @@ const getEmojis = name => {
     : validEmojis;
 };
 
-export default ({ emoji, emojiSearchTerm }) => {
-  const emojis = getEmojis(emojiSearchTerm);
+export default ({ emoji }) => {
+  const emojis = getEmojis(emoji);
 
   return (
     <div className={styles.root}>
