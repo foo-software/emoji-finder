@@ -1,5 +1,6 @@
 {
   "name": "emoji-finder",
+  "description": "A React Web App Emoji Finder using Hooks, Memoization and React Profiler",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
