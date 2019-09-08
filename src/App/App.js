@@ -24,6 +24,7 @@ export default () => {
           spellCheck="false"
           type="text"
           id="emoji"
+          data-test-id="emojiSearchInput"
           isValid
         />
       </TextField>

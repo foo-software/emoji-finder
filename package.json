@@ -15,6 +15,7 @@
     "throttle-debounce": "^2.1.0"
   },
   "scripts": {
+    "cypress:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,5 +46,8 @@
       "prettier --single-quote --write",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^3.4.1"
   }
 }
