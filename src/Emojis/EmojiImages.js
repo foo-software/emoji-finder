@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import styles from './Emojis.module.css';
 
 const EmojiImages = ({ list }) => {
@@ -11,8 +11,4 @@ const EmojiImages = ({ list }) => {
   );
 };
 
-const areEqual = (prevProps, nextProps) => {
-  return prevProps.list.id === nextProps.list.id;
-};
-
-export default memo(EmojiImages, areEqual);
+export default EmojiImages;
