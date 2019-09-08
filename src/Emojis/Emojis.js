@@ -1,13 +1,19 @@
 import React, { useMemo } from 'react';
+import EmojiImages from './EmojiImages';
+import emojiList from './emojis.json';
 import styles from './Emojis.module.css';
 
 // all de-duped emojis
-const getAllEmojis = emojis => Array.from(new Set(Object.values(emojis)));
+const getAllEmojis = emojis => ({
+  id: Date.now(),
+  emojis: Array.from(new Set(Object.values(emojis)))
+});
 
 // returns a de-duped array of emoji image urls that include a string
 // in the name. a case insensitive check.
-const getEmojisByName = ({ emojis, name }) =>
-  Array.from(
+const getEmojisByName = ({ emojis, name }) => ({
+  id: Date.now(),
+  emojis: Array.from(
     new Set(
       Object.keys(emojis).reduce(
         (accumulator, current) => [
@@ -19,30 +25,27 @@ const getEmojisByName = ({ emojis, name }) =>
         []
       )
     )
-  );
+  )
+});
 
-export default ({ emojiSearchName, emojiList }) => {
+export default ({ emojiSearchName }) => {
   // we use all emojis if none are found from the search
-  const allEmojis = useMemo(() => getAllEmojis(emojiList.data), [
-    emojiList.data
-  ]);
+  const allEmojis = useMemo(() => getAllEmojis(emojiList.data), []);
 
   // if the search is empty show all emojis
-  const emojis = !emojiSearchName
+  const emojisByName = !emojiSearchName
     ? allEmojis
     : getEmojisByName({
         emojis: emojiList.data,
         name: emojiSearchName
       });
 
-  // if search results are empty (no matches) - show all emojis
-  const emojisToShow = !emojis.length ? allEmojis : emojis;
-
   return (
     <div className={styles.root}>
-      {emojisToShow.map(current => (
-        <img alt="emoji" className={styles.image} src={current} key={current} />
-      ))}
+      <EmojiImages
+        // if search results are empty (no matches) - show all emojis
+        list={!emojisByName.emojis.length ? allEmojis : emojisByName}
+      />
     </div>
   );
 };

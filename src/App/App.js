@@ -5,7 +5,6 @@ import { debounce } from 'throttle-debounce';
 import '@material/react-material-icon/dist/material-icon.min.css';
 import '@material/react-text-field/dist/text-field.min.css';
 import { getProfileData, logProfileData } from '../profiler';
-import emojiList from './emojis.json';
 import Emojis from '../Emojis';
 import styles from './App.module.css';
 import './App.css';
@@ -51,7 +50,7 @@ export default () => {
           logProfileData(getProfileData(profileData))
         }
       >
-        <Emojis emojiSearchName={emojiSearchName} emojiList={emojiList} />
+        <Emojis emojiSearchName={emojiSearchName} />
       </Profiler>
     </div>
   );
