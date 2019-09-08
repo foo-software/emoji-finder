@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import EmojiImages from './EmojiImages';
 import emojiList from './emojis.json';
 import styles from './Emojis.module.css';
@@ -30,7 +30,7 @@ const getEmojisByName = ({ emojis, name }) => ({
 
 export default ({ emojiSearchName }) => {
   // we use all emojis if none are found from the search
-  const allEmojis = useMemo(() => getAllEmojis(emojiList.data), []);
+  const allEmojis = getAllEmojis(emojiList.data);
 
   // if the search is empty show all emojis
   const emojisByName = !emojiSearchName
