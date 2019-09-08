@@ -18,11 +18,8 @@ export const getProfileData = ([
   startTime: Number(startTime.toFixed(2))
 });
 
-export const logProfileData = ({
-  prefix,
-  data: { actualDuration, baseDuration, phase }
-}) => {
-  console.group(`${prefix}: ${phase}`);
+export const logProfileData = ({ actualDuration, baseDuration, phase }) => {
+  console.group(phase);
   console.table({
     actualDuration,
     baseDuration

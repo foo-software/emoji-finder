@@ -12,9 +12,6 @@ import './App.css';
 
 const DEBOUNCE_MS_SEARCH = 400;
 
-// track number of renders
-let emojisRenderIndex = 0;
-
 export default () => {
   const [emojiInputValue, setEmojiInputValue] = useState('');
   const [emojiSearchName, setEmojiSearchName] = useState('');
@@ -50,13 +47,9 @@ export default () => {
       <h2 className={styles.term}>{emojiInputValue || 'Search'}</h2>
       <Profiler
         id="Emojis"
-        onRender={(...profileData) => {
-          emojisRenderIndex++;
-          logProfileData({
-            prefix: `Render ${emojisRenderIndex}`,
-            data: getProfileData(profileData)
-          });
-        }}
+        onRender={(...profileData) =>
+          logProfileData(getProfileData(profileData))
+        }
       >
         <Emojis emojiSearchName={emojiSearchName} emojiList={emojiList} />
       </Profiler>
