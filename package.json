@@ -22,6 +22,7 @@
     "profiler",
     "React.Profiler",
     "React.memo",
+    "useEffect",
     "useMemo",
     "useRef"
   ],

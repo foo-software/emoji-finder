@@ -1,6 +1,6 @@
 # `emoji-finder`
 
-> A deep dive example into React Hooks including `useMemo`, `useRef`, other APIs like `React.memo` and `React.Profiler`. The purpose of this demo is to illustrate ways to improve React Render performance with techniques including debouncing and memoization.
+> A deep dive example into React Hooks including `useEffect`, `useMemo`, `useRef`, other APIs like `React.memo` and `React.Profiler`. The purpose of this demo is to illustrate ways to improve React Render performance with techniques including debouncing and memoization.
 
 ## Credits
 
